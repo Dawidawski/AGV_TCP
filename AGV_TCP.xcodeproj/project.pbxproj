@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56133CD52DE489C100724552 /* AGV_TCP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AGV_TCP.xcodeproj; sourceTree = "<group>"; };
 		565244442DE4854600F3B2AB /* AGV_TCP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGV_TCP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565244542DE4854700F3B2AB /* AGV_TCPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGV_TCPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5652445E2DE4854700F3B2AB /* AGV_TCPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGV_TCPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,16 +34,6 @@
 		565244462DE4854600F3B2AB /* AGV_TCP */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AGV_TCP;
-			sourceTree = "<group>";
-		};
-		565244572DE4854700F3B2AB /* AGV_TCPTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AGV_TCPTests;
-			sourceTree = "<group>";
-		};
-		565244612DE4854700F3B2AB /* AGV_TCPUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AGV_TCPUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -72,12 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56133CD62DE489C100724552 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5652443B2DE4854600F3B2AB = {
 			isa = PBXGroup;
 			children = (
 				565244462DE4854600F3B2AB /* AGV_TCP */,
-				565244572DE4854700F3B2AB /* AGV_TCPTests */,
-				565244612DE4854700F3B2AB /* AGV_TCPUITests */,
 				565244452DE4854600F3B2AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +126,6 @@
 			dependencies = (
 				565244562DE4854700F3B2AB /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				565244572DE4854700F3B2AB /* AGV_TCPTests */,
-			);
 			name = AGV_TCPTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +145,6 @@
 			);
 			dependencies = (
 				565244602DE4854700F3B2AB /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				565244612DE4854700F3B2AB /* AGV_TCPUITests */,
 			);
 			name = AGV_TCPUITests;
 			packageProductDependencies = (
@@ -198,6 +188,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 565244452DE4854600F3B2AB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 56133CD62DE489C100724552 /* Products */;
+					ProjectRef = 56133CD52DE489C100724552 /* AGV_TCP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				565244432DE4854600F3B2AB /* AGV_TCP */,
