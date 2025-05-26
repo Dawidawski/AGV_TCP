@@ -26,7 +26,7 @@ class ConnectionViewController: UIViewController {
     
     private func setupUI() {
         title = "TCP Connection"
-        // Navy blue background
+        // Navy blue background - zawsze taki sam
         view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
         
         // Setup text fields
@@ -35,35 +35,51 @@ class ConnectionViewController: UIViewController {
         ipTextField.borderStyle = .roundedRect
         ipTextField.keyboardType = .numbersAndPunctuation
         ipTextField.text = "127.0.0.1" // Default localhost
-        ipTextField.backgroundColor = .white
+        // Wymuś białe tło i czarny tekst niezależnie od trybu
+        ipTextField.backgroundColor = UIColor.white
+        ipTextField.textColor = UIColor.black
+        
+        // Ustaw kolor placeholder
+        ipTextField.attributedPlaceholder = NSAttributedString(
+            string: ipTextField.placeholder ?? "",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         
         portTextField = UITextField()
         portTextField.placeholder = "Enter Port (e.g., 8080)"
         portTextField.borderStyle = .roundedRect
         portTextField.keyboardType = .numberPad
         portTextField.text = "8080" // Default port
-        portTextField.backgroundColor = .white
+        // Wymuś białe tło i czarny tekst niezależnie od trybu
+        portTextField.backgroundColor = UIColor.white
+        portTextField.textColor = UIColor.black
+        
+        // Ustaw kolor placeholder
+        portTextField.attributedPlaceholder = NSAttributedString(
+            string: portTextField.placeholder ?? "",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         
         // Setup button
         connectButton = UIButton(type: .system)
         connectButton.setTitle("Connect", for: .normal)
-        connectButton.backgroundColor = .systemBlue
-        connectButton.setTitleColor(.white, for: .normal)
+        connectButton.backgroundColor = UIColor.systemBlue
+        connectButton.setTitleColor(UIColor.white, for: .normal)
         connectButton.layer.cornerRadius = 8
         connectButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
         connectButton.addTarget(self, action: #selector(connectButtonTapped), for: .touchUpInside)
         
-        // Setup status label
+        // Setup status label - zawsze biały tekst
         statusLabel = UILabel()
         statusLabel.text = "Enter connection details"
-        statusLabel.textColor = .white
+        statusLabel.textColor = UIColor.white
         statusLabel.textAlignment = .center
         statusLabel.numberOfLines = 0
         statusLabel.font = .systemFont(ofSize: 16)
         
-        // Setup activity indicator
+        // Setup activity indicator - zawsze biały
         activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = .white
+        activityIndicator.color = UIColor.white
         activityIndicator.hidesWhenStopped = true
         
         // Layout
@@ -114,7 +130,7 @@ class ConnectionViewController: UIViewController {
         connectButton.isEnabled = false
         activityIndicator.startAnimating()
         statusLabel.text = "Connecting..."
-        statusLabel.textColor = .orange
+        statusLabel.textColor = UIColor.orange
         
         tcpManager.connect(to: ipText, port: port)
         
@@ -125,11 +141,11 @@ class ConnectionViewController: UIViewController {
             
             if self.tcpManager.isConnected {
                 self.statusLabel.text = "Connected successfully!"
-                self.statusLabel.textColor = .green
+                self.statusLabel.textColor = UIColor.green
                 self.navigateToControlView()
             } else {
                 self.statusLabel.text = self.tcpManager.connectionError ?? "Connection failed"
-                self.statusLabel.textColor = .red
+                self.statusLabel.textColor = UIColor.red
             }
         }
     }
